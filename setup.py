@@ -27,7 +27,6 @@ setup(
     ],
     url="https://github.com/cykyy/pyros-api",  # project home page, if any
     packages=['pyros_api'],
-    download_url='https://github.com/cykyy/pyros-api/archive/v0.1.tar.gz',
     license="MIT",
     keywords='routerOS, mikrotik, routeros-api, routeros-python-api',
 

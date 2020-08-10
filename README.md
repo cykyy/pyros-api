@@ -96,14 +96,14 @@ pyros_api.RosCall(host, username='admin', password='', plaintext_login=True)
 
 After successfully connecting with routerOS you can call all the available functions.
 
-#### Examples
+### Examples
 ```python
 x = connection.get_ppp_secret()
 print(x)  # print list of all ppp secrets from routerOS
 ```
 
 ```python
-# changes password of given ppp secret. e.g.: 'abc1', '1234'
+# changes password of given ppp secret. e.g.: secret = 'abc1 & password = '1234'
 x = connection.update_secret_password(secret, password)
 ```
 
@@ -129,7 +129,7 @@ Optional Keys:
 * `service_type` - String - PPP secret service type (e.g: pptp/any/pppe) - Default pppoe
 * `comment` - String - PPP secret comment - Default empty string
 * `has_suspended` - Boolean - PPP secret state after creation (e.g: if True then after creating the secret the ppp secret will be disabled) - Default **False**
-####Example
+##### Example
 ```python
 secret = {
     'c_ident': 'abc5',
@@ -148,14 +148,14 @@ connection.add_ppp_secret(secret)  # returns True if successfully created
 connection.disconnect()
 ```
 
-##socialWifi's routerOS-api API's
+## socialWifi's routerOS-api API's
 
 Everything from the routerOS-api by socialWifi is also available.
 ```
 api = connection.ros_api_raw()
 ```
 Now can access all the functions from the routerOS-api by socialWifi.
-####Example
+#### Example
 ```
 api = connection.ros_api_raw()
 list_ppp = api.get_resource('/ppp/secret')

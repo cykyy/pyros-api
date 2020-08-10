@@ -6,10 +6,10 @@ Thanks to Social WiFi for their incredible RouterOS-api
 pyros-api is a simple python api for [MikroTik](https://mikrotik.com/) RouterOS extended from [RouterOS-api](https://github.com/socialwifi/RouterOS-api).
 
 ### Why Another API?
-Well, I find the routeros-api by socialwifi (no offense. their api is great) is complicated unless you are well familiar with routerOS.\
+Well, I find the routeros-api by socialwifi (no offense, their api is great!) is complicated unless you are well familiar with routerOS.\
 Though I was somewhat familiar with routerOS I still needed to often search on google and play with winbox/cli to do a simple stuff. \
-And the most embarrassing part is I forget what I did to achieve something let's say a day ago If I deleted or needed to implement the the same logic with a bit of twist.\
-That's where this api comes in. There's not many functions are simplified but I will be working on this and will update with more simplified api. Any contribution is also welcome.
+And the most embarrassing part is I used to often forget what I did to achieve something let's say a day ago If I deleted or needed to implement the same logic with a bit of twist.\
+That's where this api comes in. There's not many functions are simplified so far but I will be working on this and will update with more simplified api. Any contribution is welcome.
 
 
 ## Usage
@@ -150,23 +150,23 @@ connection.disconnect()
 
 ## socialWifi's routerOS-api API's
 
-Everything from the routerOS-api by socialWifi is also available.
+Everything from the routerOS-api by socialWifi is also available by invoking the given function.
 ```
 api = connection.ros_api_raw()
 ```
-Now can access all the functions from the routerOS-api by socialWifi.
+Now we can access all the functions from the routerOS-api by socialWifi.
 #### Example
 ```
 api = connection.ros_api_raw()
 list_ppp = api.get_resource('/ppp/secret')
 print(list_ppp.get())  # prints all ppp secrets
 ```
-To learn more about [RouterOS-api by Social WiFi] please visit their [repository].
+To learn more about how to access API's from [RouterOS-api] by Social WiFi please visit their [repository].
 
 Any contribution is welcome! Thanks.
 
 
 
 
-[RouterOS-api by Social WiFi]: <https://github.com/socialwifi/RouterOS-api>
+[RouterOS-api]: <https://github.com/socialwifi/RouterOS-api>
 [repository]: <https://github.com/socialwifi/RouterOS-api>

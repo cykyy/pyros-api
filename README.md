@@ -22,6 +22,7 @@ That's where this api comes in. There's not many functions are simplified so far
 import pyros_api
 
 connection = pyros_api.RosCall('Mikrotik IP', username='admin', password='')
+connection.login()
 connection.get_ppp_secret()
 ```
 
@@ -61,6 +62,7 @@ If we want to use SSL, we can simply specify `use_ssl` as `True`:
 
 ```python
 connection = pyros_api.RosCall('<IP>', username='admin', password='', use_ssl=True)
+connection.login()
 ```
 
 This will automatically verify SSL certificate and hostname. 
@@ -90,6 +92,7 @@ It is highly recommended only to use this option with SSL enabled.
 
 ```python
 pyros_api.RosCall(host, username='admin', password='', plaintext_login=True)
+connection.login()
 ```
 
 ### Execute Commands

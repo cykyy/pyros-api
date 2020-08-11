@@ -20,7 +20,10 @@ class RosCall:
         self._ssl_verify_hostname = ssl_verify_hostname
         self._ssl_context = ssl_context
 
-        try:
+        self.connection = None
+        self.api = None
+        # deprecated and soon will get removed
+        '''try:
             # connecting with ros
             self.connection = routeros_api.RouterOsApiPool(host=self._mikrotik_ip, username=self._username,
                                                            password=self._password, port=self._port,
@@ -32,6 +35,21 @@ class RosCall:
             self.connection.set_timeout(5)
             self.api = self.connection.get_api()
             # print(connection.connected)
+        except Exception as rce:
+            print(':Error: connecting with routerOS! {}'.format(rce))'''
+
+    def login(self):
+        try:
+            # connecting with ros
+            self.connection = routeros_api.RouterOsApiPool(host=self._mikrotik_ip, username=self._username,
+                                                           password=self._password, port=self._port,
+                                                           plaintext_login=self._plaintext_login, use_ssl=self._use_ssl,
+                                                           ssl_verify=self._ssl_verify,
+                                                           ssl_verify_hostname=self._ssl_verify_hostname,
+                                                           ssl_context=self._ssl_context)
+
+            self.connection.set_timeout(5)
+            self.api = self.connection.get_api()
         except Exception as rce:
             print(':Error: connecting with routerOS! {}'.format(rce))
 

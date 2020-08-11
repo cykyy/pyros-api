@@ -8,7 +8,7 @@ def get_long_description():
 
 setup(
     name="pyros_api",
-    version="0.1.1",
+    version="0.1.2",
     description="A simplified routerOS api in python!",
     long_description=get_long_description(),
     long_description_content_type='text/markdown',

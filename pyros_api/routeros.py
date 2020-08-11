@@ -37,9 +37,9 @@ class RosCall:
 
     # returns all ppp secret with desired values. if specific _ppp given then returns that ppp secret only.
     def get_ppp_secret(self, _ppp=''):
-        list_ppp = self.api.get_resource('/ppp/secret')
         ppp_list_dict = []
         try:
+            list_ppp = self.api.get_resource('/ppp/secret')
             if _ppp:
                 ppp_list_dict = list_ppp.get(name=_ppp)
             else:

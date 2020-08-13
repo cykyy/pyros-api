@@ -20,25 +20,6 @@ class RosCall:
         self._ssl_verify_hostname = ssl_verify_hostname
         self._ssl_context = ssl_context
 
-        self.connection = None
-        self.api = None
-        # deprecated and soon will get removed
-        '''try:
-            # connecting with ros
-            self.connection = routeros_api.RouterOsApiPool(host=self._mikrotik_ip, username=self._username,
-                                                           password=self._password, port=self._port,
-                                                           plaintext_login=self._plaintext_login, use_ssl=self._use_ssl,
-                                                           ssl_verify=self._ssl_verify,
-                                                           ssl_verify_hostname=self._ssl_verify_hostname,
-                                                           ssl_context=self._ssl_context)
-
-            self.connection.set_timeout(5)
-            self.api = self.connection.get_api()
-            # print(connection.connected)
-        except Exception as rce:
-            print(':Error: connecting with routerOS! {}'.format(rce))'''
-
-    def login(self):
         try:
             # connecting with ros
             self.connection = routeros_api.RouterOsApiPool(host=self._mikrotik_ip, username=self._username,
@@ -48,7 +29,26 @@ class RosCall:
                                                            ssl_verify_hostname=self._ssl_verify_hostname,
                                                            ssl_context=self._ssl_context)
 
-            self.connection.set_timeout(5)
+            '''self.connection.set_timeout(5)
+            self.api = self.connection.get_api()'''
+            # print(connection.connected)
+        except Exception as rce:
+            print(':Error: connecting with routerOS! {}'.format(rce))
+
+        # self.connection = None
+        self.api = None
+
+    def login(self):
+        try:
+            # connecting with ros
+            '''self.connection = routeros_api.RouterOsApiPool(host=self._mikrotik_ip, username=self._username,
+                                                           password=self._password, port=self._port,
+                                                           plaintext_login=self._plaintext_login, use_ssl=self._use_ssl,
+                                                           ssl_verify=self._ssl_verify,
+                                                           ssl_verify_hostname=self._ssl_verify_hostname,
+                                                           ssl_context=self._ssl_context)'''
+
+            self.connection.set_timeout(3)
             self.api = self.connection.get_api()
         except Exception as rce:
             print(':Error: connecting with routerOS! {}'.format(rce))
@@ -253,11 +253,11 @@ class RosCall:
 
     # returns connection state as True or False with the routerOS, on the fly
     def check_connection_ros(self):
-        connection = routeros_api.RouterOsApiPool(host=self._mikrotik_ip, username=self._username,
+        '''connection = routeros_api.RouterOsApiPool(host=self._mikrotik_ip, username=self._username,
                                                   password=self._password, plaintext_login=True)
         connection.set_timeout(5)  # we can set timeout -> tested on playground
-        connection.get_api()
-        return connection.connected
+        connection.get_api()'''
+        return self.connection.connected
         # returns True/False
 
     # returns all the profiles as list from routerOS

@@ -3,7 +3,8 @@
 ```
 Thanks to Social WiFi for their incredible RouterOS-api
 ```
-pyros-api is a simple python api for [MikroTik](https://mikrotik.com/) RouterOS extended from [RouterOS-api](https://github.com/socialwifi/RouterOS-api).
+pyros-api is a simple python api for [MikroTik](https://mikrotik.com/) RouterOS extended from [RouterOS-api](https://github.com/socialwifi/RouterOS-api). \
+pyros-api on [PyPi](https://pypi.org/project/pyros-api/)
 
 ### Why Another API?
 Well, I find the routeros-api by socialwifi (no offense, their api is great!) is complicated unless you are well familiar with routerOS.\

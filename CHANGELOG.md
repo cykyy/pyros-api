@@ -13,3 +13,9 @@ Change Log
 -------------------
 - Bug fixed!
 - Added 'login()' function to connect with routerOS by calling the function instead of during instantiating the RosCall class. 
+
+0.1.3 (11/08/2020)
+-------------------
+- Some minor changes.
+- routerOS login timeout is 3 sec now.
+- connection credential passed to routerOS-API during instantiating RosCall object. Actual login occurs upon calling login() function.

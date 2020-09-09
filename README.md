@@ -10,7 +10,7 @@ pyros-api on [PyPi](https://pypi.org/project/pyros-api/)
 Well, I find the routeros-api by socialwifi (no offense, their api is great!) is complicated unless you are well familiar with routerOS.\
 Though I was somewhat familiar with routerOS I still needed to often search on google and play with winbox/cli to do a simple stuff. \
 And the most embarrassing part is I used to often forget what I did to achieve something let's say a day ago If I deleted or needed to implement the same logic with a bit of twist.\
-That's where this api comes in. There's not many functions are simplified so far but I will be working on this and will update with more simplified api. Any contribution is welcome.
+That's where this wrapper comes in. There's not many functions are covered so far but I will be working on this and will update with more simplified api. Any contribution is welcome.
 
 
 ## Usage

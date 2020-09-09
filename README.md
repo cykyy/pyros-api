@@ -14,6 +14,7 @@ That's where this wrapper comes in. There's not many functions are covered so fa
 
 
 ## Usage
+`pip install pyros-api`
 
 ### Connection
 
